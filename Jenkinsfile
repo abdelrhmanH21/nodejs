@@ -16,3 +16,5 @@ pipeline {
                 sh 'npm install' // Install Node.js app dependencies
             }
         }
+    }
+}
