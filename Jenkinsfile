@@ -29,7 +29,7 @@ pipeline {
             steps {
                 // Build the Docker image
                 script {
-                    sudo docker.build('nodeV1')
+                    sudo docker.build('myapp:1.0')
                 }
             }
         }
