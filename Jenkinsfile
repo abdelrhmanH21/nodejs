@@ -1,10 +1,11 @@
 pipeline {
     agent any
-    tools{
-        nodejs 'my-nodejs'
-    } 
-    
     stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
         stage('Install Dependencies') {
             steps {
                 sh 'npm i --legacy-peer-deps'
@@ -12,24 +13,16 @@ pipeline {
                 sh 'npm ci'
             }
         }
-        
-        stage('Run Tests') {
+        stage('Unit Test') {
             steps {
+                // Run your unit tests here 
                 sh 'npm run test:unit'
             }
         }
-        
         stage('Build') {
             steps {
-                sh 'npm run build'
-            }
-        }
-        stage('Build Docker Image') {
-            steps {
-                // Build the Docker image
-                script {
-                    docker.build('your-image-name')
-                }
+                // Build your Node.js application (e.g., npm install)
+                sh 'npm install'
             }
         }
     }
