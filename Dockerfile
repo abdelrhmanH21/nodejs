@@ -1,10 +1,22 @@
-FROM node:14
-WORKDIR /usr/src/app
+FROM node:latest
+
+WORKDIR /app
+
 COPY package*.json ./
+
+RUN npm i --legacy-peer-deps
+
 RUN npm install
+
+RUN npm ci 
+
 COPY . .
+
 EXPOSE 3000
+
 CMD [ "node", "app.js" ]
-docker build -t nodeV1 .
-docker run -p 3000:3000 nodeV1
+
+sudo docker build -t nodeV1 .
+
+sudo docker run -p 3000:3000 nodeV1
 
