@@ -8,7 +8,9 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                sh 'npm install' // Install Node.js app dependencies
+                sh 'npm i --legacy-peer-deps'
+                sh 'npm install'
+                sh 'npm ci'
             }
         }
         stage('Unit Test') {
