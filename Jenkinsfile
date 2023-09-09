@@ -1,4 +1,4 @@
-pipeline {
+V1pipeline {
     agent any
     stages {
         stage('Checkout') {
@@ -29,7 +29,7 @@ pipeline {
             steps {
                 // Build the Docker image
                 script {
-                    sudo docker.build('your-image-name')
+                    sudo docker.build('nodeV1')
                 }
             }
         }
