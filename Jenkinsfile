@@ -13,8 +13,8 @@ pipeline {
         }
         stage('Unit Test') {
             steps {
-                // Run your unit tests here (e.g., using Mocha)
-                sh 'npm test'
+                // Run your unit tests here 
+                sh 'npm run test:unit'
             }
         }
         stage('Build') {
