@@ -25,5 +25,13 @@ pipeline {
                 sh 'npm install'
             }
         }
+        stage('Build Docker Image') {
+            steps {
+                // Build the Docker image
+                script {
+                    docker.build('your-image-name')
+                }
+            }
+        }
     }
 }
