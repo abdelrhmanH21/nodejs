@@ -14,9 +14,4 @@ COPY . .
 
 EXPOSE 3000
 
-CMD [ "node", "app.js" ]
-
-sudo docker build -t nodeV1 .
-
-sudo docker run -p 3000:3000 nodeV1
-
+CMD [ "npx", "turbo", "serve" ]
