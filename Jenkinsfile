@@ -6,12 +6,6 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Install Dependencies') {
-            steps {
-                sh 'npm install'
-                sh 'npm ci'
-            }
-        }
         stage('Unit Test') {
             steps {
                 // Run your unit tests here 
@@ -22,6 +16,12 @@ pipeline {
             steps {
                 // Build your Node.js application (e.g., npm install)
                 sh 'npm install'
+            }
+        }
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm install'
+                sh 'npm ci'
             }
         }
         stage('Build Docker Image') {
