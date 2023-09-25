@@ -6,6 +6,13 @@ pipeline {
                 checkout scm
             }
         }
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm i --legacy-peer-deps'
+                sh 'npm install'
+                sh 'npm ci'
+            }
+        }
         stage('Unit Test') {
             steps {
                 // Run your unit tests here 
@@ -18,12 +25,7 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Install Dependencies') {
-            steps {
-                sh 'npm install'
-                sh 'npm ci'
-            }
-        }
+        
         stage('Build Docker Image') {
             steps {
                 // Build the Docker image
