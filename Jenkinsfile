@@ -1,4 +1,4 @@
-pipeline { boda
+pipeline {
     agent any
     stages {
         stage('Install Dependencies') {
