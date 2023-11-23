@@ -8,9 +8,7 @@
     "type": "git",
     "url": "git+https://github.com/nodejs/nodejs.org.git"
   },
-  "author": {
-    "name": "Node.js Website Working Group"
-  },
+  "author": "Node.js Website Working Group",
   "license": "MIT",
   "engines": {
     "node": "v18"
@@ -115,5 +113,9 @@
     "stylelint-selector-bem-pattern": "3.0.1",
     "user-agent-data-types": "0.3.1",
     "wait-on": "7.0.1"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/nodejs/nodejs.org/issues"
+  },
+  "main": "postcss.config.js"
 }
